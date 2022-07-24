@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h1 class="header">FaceTerGramChat</h1>
+            <div class="sub-nav">
+                <p class="welcome">Welcome Back {{user.username}}. We missed you.</p> | <a href="/">Log Out</a>
+            </div>
+        </div>
+        <div class="body">
+        {% with messages = get_flashed_messages(category_filter=['make_post']) %}
+            {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <form action="/create/post" method="POST">
+                <h4>Make a Post</h4>
+                <textarea name="content" cols="95" rows="5" value="content" placeholder="Write your post here..."></textarea>
+                <input class="button" type="Submit" value="Post!">
+            </form>
+        </div>
+        {% with messages = get_flashed_messages(category_filter=['post_action']) %}
+            {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="body">
+            <h4>Previous Posts</h4>
+            {% for post in posts %}
+            <div class="post-container">
+                <h5 class="post-title">{{post.creator.username}} at {{post.created_at}}</h5>
+                <p class="post-body">{{post.content}}</p>
+            </div>
+            <div class="post-actions">
+                <a href="/delete/post/{{post.id}}">Delete</a> |
+                <a href="/like/post/{{post.id}}"> {{post.liked_by|length}} Likes</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

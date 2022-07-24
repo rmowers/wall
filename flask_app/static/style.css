@@ -1,0 +1,98 @@
+* {
+    margin: 0 auto;
+    padding: 0px;
+    font-family: sans-serif;
+    color: rgb(44, 50, 134);
+}
+
+.container {
+    width: 700px;
+    padding: 10px;
+}
+
+/* .header {
+    margin-bottom: 10px;
+} */
+
+.maincontent {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    background-color: rgb(164, 251, 241);
+    padding: 10px;
+}
+
+input {
+    margin: 5px;
+}
+
+.select-align {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.radio {
+    display: flex;
+    font-size: 10px;
+    width: 200px;
+    word-wrap: normal;
+}
+
+.agree {
+    font-size: 10px;
+    width: 200px;
+    word-wrap: normal;
+}
+
+.button {
+    margin-top: 5px;
+    display: block;
+    padding: 2px;
+    justify-content: right;
+}
+
+
+.nav {
+    display: flex;
+    width: 700px;
+    padding: 10px;
+    margin: 0px;
+    justify-content:space-between;
+    align-items: center;
+    background-color: rgb(164, 251, 241);
+}
+
+.sub-nav {
+    display: flex;
+}
+
+.welcome {
+    padding-right: 5px;
+}
+
+.sub-nav a {
+    padding-left: 5px;
+}
+
+.body {
+    margin: 10px;
+    padding: 10px;
+    width: 700px;
+}
+
+.post-container {
+    border: solid rgb(164, 251, 241) 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.post-body {
+    padding: 10px;
+}
+
+.post-actions {
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: rgb(164, 251, 241);
+}
